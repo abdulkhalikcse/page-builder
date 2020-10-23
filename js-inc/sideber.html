@@ -1,0 +1,256 @@
+<style type="text/css">
+.tp-sideber-main {
+  height: 100%;
+  position: fixed;
+  right: -280px;
+  top: 0;
+  width: 280px;
+  padding: 0px 10px 10px;
+  z-index: 1000;
+  background-color: #f1f1f1;
+  -moz-transition: right 0.5s 0s;
+  -o-transition: right 0.5s 0s;
+  -webkit-transition: right 0.5s 0s;
+  transition: right 0.5s 0s;
+  border-left: 1px solid #e7e7e7;
+  box-shadow: -1px 0 5px rgba(0,0,0,.12);
+}
+.tp-sideber-main .sideber-btn {
+  float: left;
+  margin: 0px 0px 0px -60px;
+  display: inline-block;
+  height: 37px;
+  width: 50px;
+  text-align: center;
+  line-height: 44px;
+  cursor: pointer;
+  background: #5D727C;
+}
+.tp-sideber-main .sideber-btn i {
+    color: #fff;
+    font-size: 24px;
+}
+.tp-sideber-main .sideber-btn:hover i{
+  animation: step-end;
+}
+.open-sideber {
+  right: 0;
+}
+/*tpbuilder-tab-content-inner*/
+.sideber-inner{
+  background: #fff;
+  height: 100%;
+  width:100%;
+  border: 1px solid #e7e7e7;
+  border-top: 0px;
+  padding-top: 42px;
+  padding: 52px 0px 10px 0px;
+  position: relative;
+}
+.sideber-inner .nav-tabs{
+  position: absolute;
+  top: 0px;
+  left: -1px;
+  width: 259px;
+}
+.sideber-tabs{
+  height: 100%;
+  width:100%;
+  padding: 0px 10px;
+}
+.sideber-inner .nav-tabs li a{
+  border-radius: 0px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #e7e7e7;
+  background: #f1f1f1;
+}
+.sideber-inner .nav-tabs .active a,
+.sideber-inner .nav-tabs .active a:focus,
+.sideber-inner .nav-tabs .active a:hover{
+  border-radius: 0px;
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-bottom: 0px;
+}
+</style>
+
+<div class="tp-sideber-main">
+  <div class="sideber-btn"><i class="fa fa-cog fa-spin"></i></div>
+  <div class="sideber-inner">
+
+    <ul class="nav nav-tabs nav-justified" role="tablist">
+      <li class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-th-list"></i></a></li>
+      <li><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-file-code-o"></i></a></li>
+      <li><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-file"></i></a></li>
+      <li><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-paint-brush"></i></a></li>
+    </ul>
+
+    <div class="sideber-tabs">
+      <div class="tab-content">
+
+        <div role="tabpanel" class="tab-pane active" id="home">
+          <div id="tab-content-inner" class="ui-state-highlight ui-widget-content">
+            <div class="tp-draggable-div" data-preview="snippets/preview/content-1.jpg">
+              <div class="container">
+                <section class="welcome-section">
+                  <span class="content2">Lolcat Shirt 1</span>
+                  <span class="content3">Lolcat Shirt 2</span>
+                  <ul>
+                    <li><a href="https://facebook.com"><i class="fa fa-facebook"></i></a></li>
+                    <li><i class="fa fa-twitter"></i> Twitter</li>
+                    <li><i class="fa fa-google"></i></li>
+                    <li><i class="fa fa-linkedin"></i></li>
+                  </ul>
+                  <span class="content4">222 styles Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus. Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.
+                    222 styles Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus. Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a 
+                    libero vitae lectus hendrerit hendrerit.</span>
+                </section>
+              </div>
+            </div>
+              <div class="tp-draggable-div" data-preview="snippets/preview/content-2.jpg">
+                <div class="container">
+                  <img src="media_panel.png">
+                </div>
+              </div>
+              <div class="tp-draggable-div" data-preview="snippets/preview/content-3.jpg">
+                <div class="container">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/Bph709EqnHk" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+              <div class="tp-draggable-div" data-preview="snippets/preview/content-4.jpg">
+                <div class="container">
+                  <div>222 styles Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus. Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.
+                  222 styles Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus. Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a 
+                  libero vitae lectus hendrerit hendrerit.</div>
+                </div>
+              </div>
+              <div class="tp-draggable-div" data-preview="snippets/preview/content-1.jpg">
+              <div class="container">
+                <section class="welcome-section">
+                  <span class="content2">Lolcat Shirt 1</span>
+                  <span class="content3">Lolcat Shirt 2</span>
+                  <span class="content4">222 styles Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus. Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.
+                    222 styles Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus. Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a 
+                    libero vitae lectus hendrerit hendrerit.</span>
+                </section>
+              </div>
+            </div>
+              <div class="tp-draggable-div" data-preview="snippets/preview/content-2.jpg">
+                <div class="container">
+                  <img src="media_panel.png">
+                </div>
+              </div>
+              <div class="tp-draggable-div" data-preview="snippets/preview/content-3.jpg">
+                <div class="container">
+                  Buckit Shirt
+                </div>
+              </div>
+              <div class="tp-draggable-div" data-preview="snippets/preview/content-4.jpg">
+                <div class="container">
+                  <div>222 styles Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus. Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.
+                  222 styles Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus. Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a 
+                  libero vitae lectus hendrerit hendrerit.</div>
+                </div>
+              </div>
+          </div>
+        </div>
+
+
+        <div role="tabpanel" class="tab-pane" id="profile">
+          222 styles Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus. Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.
+          222 styles Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus. Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.
+        </div>
+        <div role="tabpanel" class="tab-pane" id="messages">
+          333styles Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus. Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.
+          333styles Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus. Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.
+        </div>
+        <div role="tabpanel" class="tab-pane" id="settings">
+          444 styles Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus. Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.
+          444 styles Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus. Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="libraries/jQuery.style.switcher.js"></script>
+<script>
+  (function($){
+    // sideber
+    $(document).ready(function(){
+      $('.sideber-btn').click(function(e){
+        var $parent = $(this).parent('.tp-sideber-main');
+        $parent.toggleClass("open-sideber");
+      });
+    });
+
+    // Snippet Image Preview
+    $(function(){
+      $("#tab-content-inner .tp-draggable-div").prepend(function() {
+        return "<img id='snippet-preview' src='" + $(this).data("preview") + "'/>";
+      });
+    });
+
+    // niceScroll
+    $(".sideber-tabs").niceScroll({cursorborder:"",cursorcolor:"#999",boxzoom:false});
+
+    $(function() {
+      $( "#builder-main" ).sortable({
+        placeholder: "ui-state-highlight",
+        revert: true,
+        over: function() {
+            $('.placeholder').hide();
+        },
+        out: function() {
+            $('.placeholder').show();
+        },
+        stop: function() {
+            $('.placeholder').remove();
+        }
+      });
+      $( "#tab-content-inner .tp-draggable-div" ).draggable({
+        connectToSortable: "#builder-main",
+        // appendTo: "body",
+        opacity: 0.7,
+        cursor: "move",
+        cursorAt: { top: -12, left: -20 },
+        helper: "clone",
+        revert: "invalid"
+      });
+      //$( "#tab-content-inner, .tp-draggable-div" ).disableSelection();
+    });
+
+
+    //sortable Button
+    $("#builder-main").sortable({
+        handle: '.tp-MoveRow',
+        cancel: ''
+    }); //.disableSelection();
+
+    
+    /* Click sideber image to drope a snippet*/
+    $('#tab-content-inner .tp-draggable-div').click(function(){
+        $(this).closest('.tp-draggable-div').clone().appendTo('#builder-main');
+    });
+
+    // Remove placeholder
+    $( "#tab-content-inner .tp-draggable-div" ).on( "click", function() {
+      $(".placeholder").remove();
+    });
+
+
+    // Medium editor
+    var editor = new MediumEditor('#builder-main', {
+        toolbar: {
+            buttons: ['bold', 'italic', 'underline', 'strikethrough', 'anchor', 'justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull', 'orderedlist', 'unorderedlist', 'html'],
+        },
+        buttonLabels: 'fontawesome',
+        anchor: {
+            targetCheckbox: true
+        }
+    });     
+
+
+  })(jQuery);
+</script>

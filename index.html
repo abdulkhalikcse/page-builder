@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ThemePail | Template Builder</title>
+
+    <!-- Bootstrap -->
+    <link href="libraries/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="libraries/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="libraries/medium-editor/medium-editor.min.css" rel="stylesheet">
+    <link href="libraries/medium-editor/flat.min.css" rel="stylesheet">
+    <link href="libraries/view-source/prettify.css" rel="stylesheet">
+    <link href="libraries/iconpicker/fontawesome-iconpicker.css" rel="stylesheet">
+    <!-- <link href="https://code.jquery.com/ui/1.11.4/themes/start/jquery-ui.css" rel="stylesheet"> -->
+    <!-- <link href="jquery-ui-1.10.2.custom.min.css" rel="stylesheet"> -->
+
+    <link href="style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="builder">
+
+
+<div class="builder-area">
+  <div class="builder-nav-area">
+    <div class="builder-nav">
+      <div class="row">
+        <div class="col-md-6">
+          <button id="viewsource" title="View Sources"><i class="fa fa-code"></i></button>
+          <button id="tp-RemoveAllBlocks" title="Remove all blocks"><i class="fa fa-trash-o"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="builder-main">
+    <div class="placeholder">Start your new page</div>
+  </div>
+</div>  
+
+
+
+    <!-- scripts -->
+    <script src="libraries/jquery.min.1.12.4.js"></script>
+    <script src="libraries/jquery-ui/jquery-ui.min.js"></script>
+    <script src="libraries/jquery.ui.touch-punch.min.js"></script>
+    <script src="libraries/bootstrap/js/bootstrap.min.js"></script>
+    <script src="libraries/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="libraries/medium-editor/medium-editor.min.js"></script>
+    <script src="libraries/view-source/jQuery.viewSource.min.js"></script>
+    <script src="libraries/view-source/prettify.js"></script>
+    <script src="libraries/iconpicker/fontawesome-iconpicker.js"></script>
+    <script src="script.js"></script>
+
+    <script type="text/javascript">
+      $(function(){ $('.SidberImport').load("js-inc/sideber.html"); });
+
+      $(document).ready(function () {
+          // $("#viewsource1").viewSource();
+          $("#viewsource").viewSource("#builder-main");
+          // $("#viewsource3").viewSource("head");
+      });
+
+      // Remove ui draggable div and control button Before view code
+      $( "#viewsource" ).on( "click", function() {
+          var $container = $( "#builder-main div.tp-draggable-div" ).replaceWith(function() {
+            return $( this ).contents();});
+          // iconpicker
+          // var $container = $( "#builder-main .icp.icp-auto" ).replaceWith(function() {
+          //   return $( this ).contents();});
+          // var $container = $( "#builder-main .icon-picker-children" ).replaceWith(function() {
+          //   return $( this ).contents();});
+          // $("#builder-main .iconpicker-popover.popover").remove();
+          // $( '#builder-main i.fa' ).removeClass( 'iconpicker-component' );
+          // end iconpicker
+          $("#builder-main #snippet-preview").remove();
+          // $('#enable-edit-mode').addClass("show-edit-btn-ct");
+      });
+
+      $( 'body' ).on( 'click','#viewSource_close', function() {
+          $( '#builder-main .container' ).wrap( '<div class="tp-draggable-div ui-draggable ui-draggable-handle"></div>' );
+      });
+
+
+
+      // Select All code 
+      function SelectText(element) {
+          var doc = document
+              , text = doc.getElementById(element)
+              , range, selection
+          ;    
+          if (doc.body.createTextRange) {
+              range = document.body.createTextRange();
+              range.moveToElementText(text);
+              range.select();
+          } else if (window.getSelection) {
+              selection = window.getSelection();        
+              range = document.createRange();
+              range.selectNodeContents(text);
+              selection.removeAllRanges();
+              selection.addRange(range);
+          }
+      }
+      document.onclick = function(e) {    
+          if (e.target.className === 'select-all-code') {
+              SelectText('viewSource_content');
+          }
+      };
+
+
+
+      $('body').append('<div id="tp-removeRowDialog" style="display: none;" title="Delete active item?">' +
+      '<p>The current selected item will be permanently deleted and cannot be recovered. Are you sure you want to proceed?</p>' +
+      '</div>');
+
+      $( '#builder-main' ).on( 'click','.tp-draggable-div', function() {
+                $('.tp-RowToolberAdd').removeClass('tp-RowToolberAdd');
+                $('.tp-RowToolber').remove();
+
+                var toolbar = $('<div class="tp-RowToolber">' +
+                    '<div class="tp-MoveRow"><i class="fa fa-arrows"></i></div>' +
+                    '<div class="tp-CloneRow"><i class="fa fa-clone"></i></div>' +
+                    '<div class="tp-RemoveRow"><i class="fa fa-times"></i></div>' +
+                    '</div>');
+
+                toolbar.find('.tp-CloneRow').click(
+                    function () {
+                        var active = $('.tp-RowToolberAdd');
+                        var newItem = active.clone(true);
+                        active.after(newItem);
+                        var bgColor = newItem.css('background-color');
+                        newItem.animate({backgroundColor: "#fafad2"}, 400, function () {
+                            newItem.animate({backgroundColor: bgColor}, 400);
+                        });
+                    }
+                );
+                toolbar.find('.tp-RemoveRow').click(
+                    function () {
+                        $("#tp-removeRowDialog").dialog({
+                            resizable: false,
+                            modal: true,
+                            position: {of: $('.tp-RowToolberAdd')},
+                            show: {
+                                effect: "fade",
+                                duration: 400
+                            },
+                            hide: {
+                                effect: "fade",
+                                duration: 400
+                            },
+                            buttons: {
+                                "Delete active item": function () {
+                                    $('.tp-RowToolberAdd').animate({backgroundColor: "#fa8072"}, 400).fadeOut(400, function () {
+                                        $('.tp-RowToolberAdd').remove();
+                                    });
+                                    $(this).dialog("close");
+                                } //,
+                                // "Cancel": function () {
+                                //     $(this).dialog("close");
+                                // }
+                            }
+                        });
+                    }
+                );
+                $(this)
+                    .addClass('tp-RowToolberAdd')
+                    .prepend(toolbar);
+            });
+
+
+
+  // Clone Inner content mouseover
+        $( '#builder-main' ).on( 'click','li', function() {
+            $('.tp-EleToolbAdd').removeClass('tp-EleToolbAdd');
+            $('.tp-EleToolber').remove();
+
+            var toolbar = $('<div class="tp-EleToolber">' +
+                '<div class="tp-CloneEle"><i class="fa fa-clone"></i></div>' +
+                '<div class="tp-RemoveEle"><i class="fa fa-times"></i></div>' +
+                '</div>');
+
+            toolbar.find('.tp-CloneEle').click(
+                function () {
+                    var active = $('.tp-EleToolbAdd');
+                    var newItem = active.clone(true);
+                    active.after(newItem);
+                    newItem.animate(400, function () {
+                        newItem.animate(400);
+                    });
+                });
+
+            toolbar.find('.tp-RemoveEle').click( 
+              function () {
+                    $('.tp-EleToolbAdd').animate(400).fadeOut(400, function () {
+                      $('.tp-EleToolbAdd').remove();
+                    });
+                });
+
+            $(this)
+              .addClass('tp-EleToolbAdd')
+              .prepend(toolbar);
+        });
+
+
+
+      // FOr Icon picker
+        $('#builder-main').on('click','.tp-draggable-div i.fa', function() {
+            $('.tp-iconActive').removeClass('tp-iconActive');
+
+            var icontoolbar = $('<div class="icp icp-auto iconpicker-element iconpicker-container" data-selected="graduation-cap"><span class="icon-picker-children"></span></div>');
+
+            $('.icp-auto').iconpicker();
+            
+            $(this)
+                .addClass('tp-iconActive')
+                .wrap(icontoolbar);
+        });
+
+        // $('#builder-main').on('click','.save-icon', function() {
+        //     var $container = $( ".icp.icp-auto" ).replaceWith(function() { return $( this ).contents();});
+        //     var $container = $( ".icon-picker-children" ).replaceWith(function() { return $( this ).contents();});
+        //     $('.iconpicker-popover').remove();
+        // });
+
+
+
+      // Remove All Blocks ==================
+      $('body').append('<div id="tp-RemoveAllDialog" style="display: none;" title="Delete all blocks?">' +
+      '<p>The all blocks item will be permanently deleted and cannot be recovered. Are you sure you want to proceed?</p>' +
+      '</div>');
+
+              $( '.builder-area' ).on( 'click','#tp-RemoveAllBlocks', function() {
+                  $("#tp-RemoveAllDialog").dialog({
+                      resizable: false,
+                      modal: true,
+                      position: {of: $('#tp-RemoveAllBlocks')},
+                      show: {
+                          effect: "fade",
+                          duration: 400
+                      },
+                      hide: {
+                          effect: "fade",
+                          duration: 400
+                      },
+                      buttons: {
+                        "Delete all blocks": function () {
+                            $('#builder-main div').animate({backgroundColor: "#fa8072"}, 400).fadeOut(400, function () {
+                                $('#builder-main div').remove();
+                            });
+                            $(this).dialog("close");
+                        } } });
+              });
+
+
+
+
+      // Active edit mode ==================
+      $('body').append('<div id="tp-ActiveEditmode" style="display: none;" title="Delete all blocks?">' +
+      '<p>The all blocks item will be permanently deleted and cannot be recovered. Are you sure you want to proceed?</p>' +
+      '</div>');
+
+              $( '.builder-area' ).on( 'click','#viewSource_close', function() {
+                  $("#tp-RemoveAllDialog").dialog({
+                      resizable: false,
+                      modal: true,
+                      position: {of: $('#tp-ActiveEditmode')},
+                      show: {
+                          effect: "fade",
+                          duration: 400
+                      },
+                      hide: {
+                          effect: "fade",
+                          duration: 400
+                      },
+                      buttons: {
+                        "Delete all blocks": function () {
+                            $('#builder-main div').animate({backgroundColor: "#fa8072"}, 400).fadeOut(400, function () {
+                                $('#builder-main div').remove();
+                            });
+                            $(this).dialog("close");
+                        } } });
+              });
+
+
+
+      // For change image url ==========
+      $('body').append('<div style="display: none;" id="changeImgUrl">' +
+      '<p> Change image url</p>' +
+      '<input type="text" id="myTextBox" />' +
+      '</div>');
+
+      $( '#builder-main' ).on( 'click','img', function() {
+        var x = $(this);
+          $("#changeImgUrl")
+            .data('link', x)
+            .dialog('open');
+          var url = x.attr('src');
+          $('#myTextBox').val(url);
+      });
+
+      //Set up the dialog box
+      $("#changeImgUrl").dialog({
+        autoOpen: false,
+        modal: true,
+        title: "A Dialog Box",
+        buttons: {
+          'OK': function() {
+            var img_to_update = $(this).data('link');
+            var textValue = $('#myTextBox').val();
+            img_to_update.attr('src', textValue);
+          },
+          'Close': function() {
+            //alert('The Close button was clicked');
+            $(this).dialog('close');
+          }
+        }
+      });
+
+
+
+
+      // For change video url =======
+      $('body').append('<div style="display: none;" id="changeVideoUrl">' +
+      '<p> Change image url</p>' +
+      '<input type="text" id="myTextBox2" />' +
+      '</div>');
+
+      $( '#builder-main .tp-draggable-div' ).on( 'click','iframe', function() {
+        var x = $(this);
+          $("#changeVideoUrl")
+            .data('link', x)
+            .dialog('open');
+          var url = x.attr('src');
+          $('#myTextBox2').val(url);
+      });
+
+      //Set up the dialog box
+      $("#changeVideoUrl").dialog({
+        autoOpen: false,
+        modal: true,
+        title: "A Dialog Box",
+        buttons: {
+          'OK': function() {
+            var img_to_update = $(this).data('link');
+            var textValue = $('#myTextBox2').val();
+            img_to_update.attr('src', textValue);
+          },
+          'Close': function() {
+            //alert('The Close button was clicked');
+            $(this).dialog('close');
+          }
+        }
+      });
+
+      
+  
+    </script>
+    <div class="SidberImport"></div>
+  </body>
+</html>
